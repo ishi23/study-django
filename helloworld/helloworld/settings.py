@@ -28,7 +28,7 @@ SECRET_KEY = 'y&l*b4+gzqb%ko30&meucrce_xm0yak6#-g)6=+wc8r(bpj^ui'
 # エラー時に詳細表示。開発中はTrue, 運用時はFalseにする。
 DEBUG = True
 
-# アクセス許可サーバーのリスト
+# アクセス許可Webサーバーのリスト
 ALLOWED_HOSTS = []
 
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',  # default: 
     'django.contrib.messages',  # default:
     'django.contrib.staticfiles',  # default
+    'helloworldapp1.apps.Helloworldapp1Config',  # 追加
 ]
 
 # リクエスト → レスポンス の間でやることのリスト
@@ -61,7 +62,7 @@ ROOT_URLCONF = 'helloworld.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
