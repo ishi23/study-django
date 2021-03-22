@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="p-5 mb-2 bg-secondary text-white">
+    <h1>ToDoList</h1>
+    List your todo and 
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    
+    <a href="{% url 'create' %}" class="btn btn-success btn-lg mt-3 mb-3" tabindex="-1" role="button" aria-disabled="true">新規作成</a>
+
+    {% for item in object_list %}
+        
+        <div class="alert alert-{{ item.priority }}" role="alert">
+            <p><font size="5"><b>{{ item.title }}</b></font> <br>期日  {{ item.duedate | date:"Y/m/d(D)" }}</p>
+            <a href="{% url 'update' item.pk %}" class="btn btn-warning" tabindex="-1" role="button" aria-disabled="true">編集画面へ</a>
+            <a href="{% url 'delete' item.pk %}" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">削除画面へ</a>
+            <a href="{% url 'detail' item.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">詳細画面へ</a>
+        </div>
+
+    {% endfor %}
+</div>
+{% endblock %}

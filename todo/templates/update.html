@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- 入力フォーム -->
+<form action='' method='POST'>{% csrf_token %}
+    <!-- pタグとしてフォームを表示 -->
+    {{ form.title }}
+    {{ form.memo }}
+    {{ form.priority }}
+    {{ form.duedate }}
+    <!-- Createボタン -->
+    <input type='submit' value='update'>
+</form>
+{% endblock content %}

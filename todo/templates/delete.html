@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- 入力フォーム -->
+<form action='' method='POST'>{% csrf_token %}
+
+    <!-- Createボタン -->
+    <input type='submit' value='delete'>
+
+</form>
+{% endblock content %}

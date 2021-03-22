@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% for item in object_list %}
+<div class="alert alert-dark" role="alert">
+{{ item.title }}
+</div>
+<div class="alert alert-success" role="alert">
+{{ item.memo }}
+</div>
+{% endfor %}
