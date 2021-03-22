@@ -51,3 +51,37 @@
 ## views.py
 - urlsで使う処理を規定しておく
 - Djangoで用意されたTamplateから持って来れる
+- ListViewクラス：リスト型の表示に適したViewクラス
+- template_name = 'templatename.html'
+- model = modelclassname defined in models.py
+
+## models.py
+- DBを使う際に使う
+- クラス定義：中に変数(項目)とフィールドを準備
+- `python manage.py makemigration <app_name>` で DBにテーブルを作成するためのスクリプトが作成される。これはコマンド毎に新規に作成されるので過去ver保存の意味合いもある。また中身のチェックもされる。
+- `python manage.py migrate` でDBにテーブルが作成される
+
+
+## admin.py
+- 管理者画面で何を表示するか
+
+
+## Djangoのhtml
+- Django特有のHTMLタグ
+- {{}} データ: 変数の表示
+- {%%} 複雑な処理: for分とか
+
+## Bootstrap
+- CSSファイル
+- web上のCSSを利用できる。多種多様な見た目を提供してくれている
+- htmlコードは基本的にBootstrapのHPから選んでコピペ
+
+## base.html
+- Django特有のhtml共通化機能
+- htmlを増やすと同じコードを部分的にたくさん書く事になる
+- 共通部分に変更が生じた場合、全てのhtmlを変えなければいけない
+- base.htmlというファイル名である必要はないが、慣習的にbase
+- ブロック構造を共通化
+- 各ブロックに何を表示させるかを各htmlで規定
+- 各html側でbase.htmlから引っ張ってくることをコード{% extends 'base.html' %}を先頭に
+

@@ -1,6 +1,3 @@
-# サーバーの起動(Webアプリを動かす)
-`$ python manage.py runserver`
-
 # プロジェクトのスタート
 
 ### プロジェクトの作成
@@ -54,3 +51,17 @@ $ python manage.py startapp <app_name>
 
 4 directories, 16 files
 ```
+
+
+# サーバーの起動(Webアプリを動かす)
+`$ python manage.py runserver`
+
+# make migration: models.py(DBテーブル設計ファイル)のチェックと履歴保存
+`$ python manage.py makemigrations <app_name>  # <app_name>無しだと全アプリ`
+
+# migration: テーブルを作成
+`$ python manage.py `
+
+# superuser作成
+`$ python manage.py createsuperuser`
+- ユーザー名、パスワードが要求されるので入力
