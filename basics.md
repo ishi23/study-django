@@ -85,3 +85,18 @@
 - 各ブロックに何を表示させるかを各htmlで規定
 - 各html側でbase.htmlから引っ張ってくることをコード{% extends 'base.html' %}を先頭に
 
+
+# 初めにおそらく絶対やる流れ
+- Dockerかpipenvで仮想環境を準備し、django含む必要なpythonライブラリをインストール
+- プロジェクトとアプリを立ち上げる
+- settings.pyの編集：INSTALLED_APPSに作ったアプリのapps.Configクラスを追加
+- settings.pyの編集：TEMPLATESのDIRSにBASE_DIR/'templates'を追加し、templatesフォルダを作成
+- urls.pyでapp側に飛ばすurlを決める(appが一つなら''でadmin以外全て飛ばす)
+- 作るhtmlページの種類と役割を決めてappのurls.pyに書いていく
+- それぞれのページ(url)に使うviewを関数またはクラスで作成する
+- それぞれのviewに使うtemplate htmlを作成する。また、そのベースとなるbase.htmlを作成する
+
+
+## render と redirect
+- render:
+- redirect: 違うviewを返す

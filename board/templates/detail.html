@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>List</title>
+{% endblock %}
+
+
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+    <h3>detail page</h3>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+
+    <div class="alert alert-success" role="alert">
+        <p>title: {{ object.title }}</p>
+        <p>from: {{ object.author }}</p>
+        <p><img src="{{ object.snsimage.url }}"></p>
+
+        <a href="{% url 'good' object.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Good</a>
+        <a href="{% url 'read' object.pk %}" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Read</a>
+    </div>
+
+    <a href="{% url 'logout' %}">logout</a>
+
+</div>
+{% endblock %}

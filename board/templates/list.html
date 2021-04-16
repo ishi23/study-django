@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>List</title>
+{% endblock %}
+
+
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+    <h3>SNS</h3>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    {% for item in object_list %}
+    <!-- <div class="alert alert-success" role="alert">
+        User: {{ item.author }}
+        <br>
+        title: <a href="{% url 'detail' item.pk %}">{{ item.title }}</a>
+        
+        <p>text: {{ item.content }}</p>
+        <p><a href="{{ item.snsimage.url }}">image</a></p>
+        <a href="{% url 'good' item.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">
+            Good  <span class="badge bg-light text-dark">{{item.good}}</span></a>
+        <a href="{% url 'read' item.pk %}" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">
+            Read <span class="badge bg-light text-dark">{{item.read}}</span></a>
+    </div> -->
+
+    <div class="card text-dark bg-light">
+        <div class="card-header">From: {{ item.author }}</div>
+        <div class="card-body">
+            <a href="{% url 'detail' item.pk %}"><h5 class="card-title">{{ item.title }}</h5></a>
+            <p class="card-text">{{ item.content }}</p>
+            <p><a href="{{ item.snsimage.url }}" class="btn btn-link" tabindex="-1" role="button" aria-disabled="true">image</a></p>
+            <a href="{% url 'good' item.pk %}" class="btn btn-primary btn-sm" tabindex="-1" role="button" aria-disabled="true">
+                Good  <span class="badge bg-light text-dark">{{item.good}}</span></a>
+            <a href="{% url 'read' item.pk %}" class="btn btn-secondary btn-sm" tabindex="-1" role="button" aria-disabled="true">
+                Read <span class="badge bg-light text-dark">{{item.read}}</span></a>
+        </div>
+    </div>
+
+    {% endfor %}
+
+    <a href="{% url 'logout' %}">logout</a>
+
+</div>
+{% endblock %}
